@@ -1,0 +1,14 @@
+<root path='/'>
+  <etc path='/etc'>
+    <apt path='/etc/apt'>
+  </etc>
+  <home path='/home'>
+    <Olga path='/home/Olga'>
+    <Eva path='/home/Eva'>
+    <Dima path='/home/Dima'>
+  </home>
+  <var path='/var'>
+    <lib path='/var/lib'>
+    <log path='/var/log'>
+  </var>
+</root>

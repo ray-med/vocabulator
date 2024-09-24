@@ -1,0 +1,16 @@
+[
+  {
+    "path": "/",
+    "children": {
+      "etc": {
+        "path": "/etc"
+      },
+      "home": {
+        "path": "/home"
+      },
+      "var": {
+        "path": "/var"
+      }
+    }
+  }
+]
