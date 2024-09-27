@@ -116,3 +116,4 @@
     border-collapse: collapse;
   }
   td{border: 1px solid black;width: 200px;}
+  .article {border: 1px solid black; border-radius: 15px;}

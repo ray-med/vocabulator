@@ -1,6 +1,8 @@
 // Main JS
 // import { bash } from "linux/bash.js";
 
+toIndex();
+
 function toIndex(){
   // document.getElementById('submit').removeEventListener('click', showResults);
   document.body.innerHTML = "";
@@ -26,7 +28,20 @@ function toTeor(){
     <h2>Теория Bash</h2>
   </div>
   <div id="teor">
-    ${bash.ls.articleText}
+    <div class='article'>
+      <h3>${bash.du.description}</h3>
+      <p>${bash.du.s.description}</br>${bash.du.h.description}</p>
+    </div>
+
+    <div class='article'>
+      <h3>${bash.df.description}</h3>
+      <p>${bash.df.h.description}</p>
+    </div>
+    
+    <div class='article'>
+      <h3>${bash.ls.description}</h3>
+      <p>${bash.ls.a.description}</br>${bash.ls.l.description}</br>${bash.ls.h.description}</p>
+    </div>
   </div>`;
 
   var header = document.getElementById("myHeader");
@@ -44,6 +59,23 @@ let bash = {
   ff: 'dfg'
 }
 
+bash['df'] = {
+  description: 'df - report file system disk space usage',
+  h: {
+    description: '-h flag shows ls with human readable bytes format.'
+  }
+}
+
+bash['du'] = {
+  description: 'df - estimate file space usage',
+  h: {
+    description: '-h flag shows ls with human readable bytes format.'
+  },
+  s: {
+    description: '-s flag show sum'
+  }
+}
+
 bash['ls'] = {
   description: 'ls - shows list of files in the directory',
   a: {
@@ -54,11 +86,5 @@ bash['ls'] = {
   },
   h: {
     description: '-h flag shows ls with human readable bytes format.'
-  },
-  articleText: `<div class='article'>
-  <h3>${bash.ls.description}</h3>
-  <p>${bash.ls.a.description}</br>
-  ${bash.ls.l.description}</br>
-  ${bash.ls.h.description}</p>
-  </div>`
+  }
 }
