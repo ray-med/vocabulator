@@ -45,7 +45,7 @@ const nano = new Command('nano file.txt', 'nano - текстовый редак�
 const grep = new Command('grep 192 file.txt', 'grep - фильтр строк');
 
 // ================ Questions =====================================================================
-const questions = [
+const questionDB = [
   {
     question: "Какая команда bash показывает список файлов директории /home/ola?",
     answers: [

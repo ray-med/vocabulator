@@ -19,8 +19,14 @@ body {
   font-size: 25px;
   color: #001e4d;
   font-weight: 600;
+  /* padding-bottom: 30px; */
+}
+.app h3 {
+  /* font-size: 25px; */
+  color: #777;
+  font-weight: 300;
   border-bottom: 1px solid #333;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 .quiz {
   padding: 20px 0;

@@ -8,7 +8,13 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 // get random 10 questions from DB
-// ...
+function get_random_3_question_from_questionDB(db){
+    // 1) Create random indexes array
+    // 2) Create questions array for one session
+    // questionDB => questions
+    // 3) Shuffle answers
+    // 4) startQuiz()
+}
 
 function startQuiz(){
     currentQuestionIndex = 0;
@@ -71,8 +77,6 @@ function selectAnswer(e){
         button.disabled = true;
     });
     nextButton.style.display = 'block';
-
-    
 }
 
 function showScore(){

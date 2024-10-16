@@ -11,8 +11,8 @@ function toIndex(){
   <div id="wrapperogl">
     <table id="oglavlenie">
       <tr><td class="tema" onclick="toTeor()"><p>Краткий методический материал</p></a></td></tr>
-      <tr><td class="tema" onclick="toLevel_1()"><p>Тест по bash уровень сложности 1</p></td></tr>
-      <tr><td class="tema" onclick="toLevel_2()"><p>Тест по bash уровень сложности 2</p></td></tr>
+      <tr><td class="tema" onclick="window.location.href='./qz/index.html'; return false"><p>Тест по bash уровень сложности 1</p></td></tr>
+      <tr><td class="tema"><p>Тест по bash уровень сложности 2</p></td></tr>
     </table>
   </div>`;
 }
@@ -49,11 +49,6 @@ function toTeor(){
   window.onscroll = function() {headerFixer(header, sticky)};
 }
 
-
-
-
-
-
 let bash = {
   description: 'Big bash object',
   ff: 'dfg'
@@ -67,7 +62,7 @@ bash['df'] = {
 }
 
 bash['du'] = {
-  description: 'df - estimate file space usage',
+  description: 'du - estimate file space usage',
   h: {
     description: '-h flag shows ls with human readable bytes format.'
   },
