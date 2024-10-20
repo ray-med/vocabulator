@@ -1,7 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// "База Данных" вопросов по bash первого уровеня сложности v0.1
+// "База Данных" вопросов по bash первого уровеня сложности v0.3.1
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+// DB for Leve1 quiz
 const questionDB1 = [
   {
     id: 1,
@@ -69,27 +70,56 @@ const questionDB1 = [
       ['pwd - dima', 'pwd - Present Working Directory']
     ],
   },
-]
+  {
+    id: 7,
+    question: "Как удалить юзера ОС vasya?",
+    correct_answer: 'userdel vasya',
+    answers: [
+      ['su - vasya', 'su - Switch User'],
+      ['nc - vasya', 'nc -vz <ip> <port> проверить доступность порта на конкретном сервере'],
+      ['userdel vasya', 'userdel - удалить юзера'],
+      ['pwd - vasya', 'pwd - Present Working Directory']
+    ],
+  },
+];
 
+// DB for Leve2 quiz
 const questionDB2 = [
   {
+    id: 1,
     question: "Как проверить доступность 22 порта на сервере 192.168.1.33?",
+    correct_answer: 'nc 192.168.1.33 22',
     answers: [
       ['cd 192.168.1.33', 'cd - (Change Directory) сменить директорию'],
       ['ls 192.168.1.33 22', 'ls - LiSt files'],
       ['pwd 22', 'pwd - Present Working Directory'],
       ['nc 192.168.1.33 22', 'nc -vz <ip> <port> проверить доступность порта на конкретном сервере']
     ],
-    correct_answer: 'nc 192.168.1.33 22'
   },
   {
+    id: 2,
     question: "Как проверить доступность 5432 порта на сервере 192.168.10.123?",
+    correct_answer: 'nc 192.168.10.123 5432',
     answers: [
       ['cd 192.168.10.123', 'cd - (Change Directory) сменить директорию'],
       ['ls 192.168.10.123 5432', 'ls - LiSt files'],
       ['pwd 22', 'pwd - Present Working Directory'],
       ['nc 192.168.10.123 5432', 'nc -vz <ip> <port> проверить доступность порта на конкретном сервере']
     ],
-    correct_answer: 'nc 192.168.10.123 5432'
   },
-]
+];
+
+// DB for test of answers shuffle
+const questionDBt = [
+  {
+    id: 1,
+    question: "Какая кнопка показывает текст 3333?",
+    correct_answer: '3333',
+    answers: [
+      ['1111', '11'],
+      ['2222', '22'],
+      ['3333', '33'],
+      ['4444', '44']
+    ]
+  }
+];

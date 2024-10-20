@@ -8,25 +8,28 @@ const nextButton = document.getElementById('next-btn');
 
 let currentQuestionIndex = 0;
 let score = 0;
-let questions = get_random_3q_from_questionDB(questionDB);
+let questions = get_random_3q_from_questionDB(questionDB1);
 startQuiz();
 
 
 function get_random_3q_from_questionDB(db){
-
     // 1) get random 3 questions from DB
     const questionsForSession = [];
-    while (questionsForSession.length < 2) {
+    while (questionsForSession.length < 3) {
         const randomIndex = Math.floor(Math.random() * db.length);
         if (!questionsForSession.includes(db[randomIndex])) {
             questionsForSession.push(db[randomIndex]);
         }
     }
-
-    // 2) Shuffle answers
-    // ..........
-
+    // 2) Shuffle answers inside every question
+    questionsForSession.forEach((q) => {
+        for (let i = q.answers.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            swap(q.answers, i, j);
+        }
+    })
     // 3) Return questions array
+    console.log(questionsForSession)
     return questionsForSession;
 }
 
@@ -109,7 +112,7 @@ function showScore(){
     nextButton.innerHTML = 'Play again';
     nextButton.style.display = 'block';
 
-    questions = get_random_3q_from_questionDB(questionDB);
+    questions = get_random_3q_from_questionDB(questionDB1);
 }
 
 function resetState(){
@@ -117,4 +120,10 @@ function resetState(){
         answerButtons.removeChild(answerButtons.firstChild);
     }
     nextButton.style.display = 'none';
+}
+
+function swap(arr, i, j) {
+    const temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }

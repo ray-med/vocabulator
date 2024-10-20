@@ -36,6 +36,19 @@ body {
   color: #001e4d;
   font-weight: 600;
 }
+.close{
+  background: #f00;
+  color: #fff;
+  font-size: 3em;
+  text-decoration: none;
+  display: flex;
+  border-radius: 50%;
+  width: 0.6em;
+  height: 0.6em;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}
 .btn{
   background: #fff;
   color: #222;

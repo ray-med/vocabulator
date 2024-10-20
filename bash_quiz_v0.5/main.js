@@ -11,7 +11,7 @@ function toIndex(){
   <div id="wrapperogl">
     <table id="oglavlenie">
       <tr><td class="tema" onclick="toTeor()"><p>Краткий методический материал</p></a></td></tr>
-      <tr><td class="tema" onclick="window.location.href='./qz/index.html'; return false"><p>Тест по bash уровень сложности 1</p></td></tr>
+      <tr><td class="tema" onclick="window.location.href='quiz1.html'; return false"><p>Тест по bash уровень сложности 1</p></td></tr>
       <tr><td class="tema"><p>Тест по bash уровень сложности 2</p></td></tr>
     </table>
   </div>`;
