@@ -1,5 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-//// В этом скрипте логика приложения
+//// В этом скрипте логика самого квиза
+////
+//// При перезапуске квиза варианты ответов на тех же местах, а надо шафлить
+//// может лучше шафлить в функции showQuestion()?
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 const questionElement = document.getElementById('question');
@@ -8,14 +11,48 @@ const nextButton = document.getElementById('next-btn');
 
 let currentQuestionIndex = 0;
 let score = 0;
-let questions = get_random_3q_from_questionDB(questionDB1);
+let [currentMode, nq] = getMode()
+let questions = get_random_nq_from_questionDB(currentMode, nq);
+let quizVersion = 0.71
+document.querySelector('.app > h3').innerHTML = `Движок тестирования ${quizVersion}`
 startQuiz();
 
+function getMode(){
+    const params = new URLSearchParams(window.location.search); // получаем параметры из URL
+    let titleValue = params.get("title"); // извлекаем значение параметра "title"
+    let db, nq
+    console.log(`Внутри getMode titleValue: ${titleValue}`)
+    switch (titleValue){
+        case 'questionDB1':
+            document.title = 'Bash тест 1';
+            db = 'questionDB1';
+            nq = 5;
+            break;
+        case 'questionDB2':
+            document.title = 'Bash тест 2';
+            db = 'questionDB1';
+            nq = 2;
+            break;
+        case 'arenadb':
+            document.title = 'Bash тест 1';
+            db = 'arenadb';
+            nq = 10;
+            break;
+        case 'questionDBt':
+            document.title = 'тест фич';
+            db = 'questionDBt';
+            nq = 1;
+            break;
+    }
+    console.log(`Внутри getMode после case db и nq: ${db} ${nq}`)
+    return [db, nq]
+}
 
-function get_random_3q_from_questionDB(db){
+function get_random_nq_from_questionDB(mode, nq){
     // 1) get random 3 questions from DB
+    let db = databaseContainer[mode]
     const questionsForSession = [];
-    while (questionsForSession.length < 3) {
+    while (questionsForSession.length < nq) {
         const randomIndex = Math.floor(Math.random() * db.length);
         if (!questionsForSession.includes(db[randomIndex])) {
             questionsForSession.push(db[randomIndex]);
